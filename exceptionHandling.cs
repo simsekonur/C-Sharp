@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http.Headers;
 
 namespace ConsoleApp1
 {
@@ -6,7 +7,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            try {
+            try
+            {
 
                 Console.Write("Enter a number: ");
                 int num1 = Convert.ToInt32(Console.ReadLine());
@@ -15,10 +17,15 @@ namespace ConsoleApp1
                 Console.WriteLine(num1 / num2);
 
             }
-            catch (Exception e) {
+            catch (DivideByZeroException e)
+            {
 
                 Console.WriteLine(e.Message);
             }
+            catch (FormatException f) {
+                Console.WriteLine(f.Message);
+            }
+            
 
 
         }
